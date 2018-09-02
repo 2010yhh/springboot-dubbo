@@ -17,7 +17,7 @@ public class controller {
     private Test1Service test1Service;
     @Reference(version = "1.0.0",mock="return Test2Service null")
     private Test2Service test2Service;
-    @Reference(version = "1.0.0",timeout =10000,retries = 2,cluster = "broadcast")
+    @Reference(version = "1.0.0",timeout =10000,retries = 2,cluster = "failover")
     private Test3Service test3Service;
     @RequestMapping(value = "/test1")
     public Object test1(@RequestParam String name) {
